@@ -22,7 +22,7 @@ public class MovementController : MonoBehaviour {
 
 	private void FixedUpdate() {
 		//TODO: this needs a fix
-		rb.linearVelocity = moveDirection;
+		//rb.linearVelocity = moveDirection;
 		//TODO: create a class for the objects affected by this gravity
 		rb.AddForce(GravitySystem.Instance.GetCurrentGravity());
 	}
