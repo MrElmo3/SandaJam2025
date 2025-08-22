@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feffdc02909ced7449043347862bae80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _displacementAngle: 12.5
+  _displacementSpeed: 0.55
+  _rotationSpeed: 0.35
