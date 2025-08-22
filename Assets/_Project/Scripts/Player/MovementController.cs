@@ -31,6 +31,7 @@ public class MovementController : MonoBehaviour {
 		while(true) {
 			yield return new WaitForSeconds(5);
 			GravitySystem.Instance.RotateRight();
+			CameraSystem.Instance.RotateRight();
 		}
 	}
 }

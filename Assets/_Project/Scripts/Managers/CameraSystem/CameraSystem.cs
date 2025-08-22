@@ -4,7 +4,7 @@ using UnityEngine;
 public class CameraSystem : StaticInstance<CameraSystem> {
 	
 	private Transform mainCamera;
-
+	[SerializeField] private float _speed = 1f;
 	private bool isRotating = false;
 
 	protected override void Awake() {
@@ -14,23 +14,32 @@ public class CameraSystem : StaticInstance<CameraSystem> {
 
 	public void RotateRight() {
 		if(isRotating) return;
-		StartCoroutine(PerformRotation(Quaternion.Euler(0, 0, mainCamera.rotation.eulerAngles.z + 90)));
-	}
+        StartCoroutine(PerformRotation(
+            Quaternion.Euler(0, 0, mainCamera.rotation.eulerAngles.z - 90),
+            _speed
+        ));
+    }
 
 	public void RotateLeft() {
 		if(isRotating) return;
-		StartCoroutine(PerformRotation(Quaternion.Euler(0, 0, mainCamera.rotation.eulerAngles.z - 90)));
-	}
+        StartCoroutine(PerformRotation(
+            Quaternion.Euler(0, 0, mainCamera.rotation.eulerAngles.z + 90),
+            _speed
+        ));
+    }
 
 	public void Rotate180() {
 		if(isRotating) return;
-		StartCoroutine(PerformRotation(Quaternion.Euler(0, 0, mainCamera.rotation.eulerAngles.z + 180)));
+        StartCoroutine(PerformRotation(
+			Quaternion.Euler(0, 0, mainCamera.rotation.eulerAngles.z + 180),
+			_speed
+		));
 	}
 
-	private IEnumerator PerformRotation (Quaternion targetRotation) {
+	private IEnumerator PerformRotation (Quaternion targetRotation,float _speed) {
 		isRotating = true;
 		float progress = 0f;
-		float speed = 0.5f;
+		float speed = _speed;
 
 		while (progress < 1f) {
 			mainCamera.rotation = Quaternion.Slerp (mainCamera.rotation, targetRotation, progress);
@@ -42,4 +51,5 @@ public class CameraSystem : StaticInstance<CameraSystem> {
 		}
 		isRotating = false;
 	}
+
 }
