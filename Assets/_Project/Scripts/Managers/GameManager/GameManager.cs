@@ -1,5 +1,16 @@
+using UnityEngine;
+
 public class GameManager : StaticInstance<GameManager> {
-	
+
+	[Header("Prefabs")]
+	[SerializeField] GameObject _playerPrefab;
+
+	public GameObject Player { get; private set; }
+
+	private void Start() {
+		Player = GameObject.FindWithTag("Player");
+	}
+
 	public void RotateRight() {
 		GravitySystem.Instance.RotateRight();
 		CameraSystem.Instance.RotateLeft();
