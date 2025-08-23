@@ -7,8 +7,9 @@ public class GameManager : StaticInstance<GameManager> {
 
 	public GameObject Player { get; private set; }
 
-	private void Start() {
-		Player = GameObject.FindWithTag("Player");
+	public void LoadLevel(string levelName) {
+		var levelController = LevelSystem.Instance.LoadLevel(levelName);
+		Player = Instantiate(_playerPrefab, levelController.GetPlayerStartPosition());
 	}
 
 	public void RotateRight() {
