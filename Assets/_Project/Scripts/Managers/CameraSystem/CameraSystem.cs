@@ -16,26 +16,29 @@ public class CameraSystem : StaticInstance<CameraSystem> {
 		mainCamera = Camera.main.transform;
 	}
 
-	public void RotateRight() {
+	public void RotateRight(UnityAction OnComplete = null) {
 		if(isRotating) return;
 
 		PerformRotation(_displacementAngle, _displacementSpeed, () => {
-			PerformRotation( -1 * (_displacementAngle + 90), _rotationSpeed);
+			PerformRotation( -1 * (_displacementAngle + 90), _rotationSpeed,
+			() => { OnComplete?.Invoke(); });
 		});
 	}
 
-	public void RotateLeft() {
+	public void RotateLeft(UnityAction OnComplete = null) {
 		if(isRotating) return;
 
 		PerformRotation( -1 * _displacementAngle, _displacementSpeed, () => {
-			PerformRotation(_displacementAngle + 90, _rotationSpeed);
+			PerformRotation(_displacementAngle + 90, _rotationSpeed,
+			() => { OnComplete?.Invoke(); });
 		});
 	}
 
-	public void Rotate180() {
+	public void Rotate180(UnityAction OnComplete = null) {
 		if(isRotating) return;
 		PerformRotation( -1 * _displacementAngle, _displacementSpeed, () => {
-			PerformRotation(_displacementAngle + 180, _rotationSpeed);
+			PerformRotation(_displacementAngle + 180, _rotationSpeed,
+			() => { OnComplete?.Invoke(); });
 		});
 	}
 

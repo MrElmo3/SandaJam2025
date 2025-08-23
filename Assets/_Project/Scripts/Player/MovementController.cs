@@ -1,25 +1,40 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovementController : MonoBehaviour {
 
-	Rigidbody2D rb;
-	Vector2 moveDirection = new();
+	[SerializeField] float _velocity = 1;
+
+	Rigidbody2D _rb;
+	float _moveInput = new();
 
 	private void Awake() {
-		rb = GetComponent<Rigidbody2D>();
+		_rb = GetComponent<Rigidbody2D>();
+	}
+
+	public void OnInteract(InputValue value) {
+
 	}
 
 	public void OnMove(InputValue value){
-		if (Mathf.Abs(value.Get<float>()) <= 0.01f) return;
-		moveDirection = new(value.Get<float>(), 0);
+		_moveInput = value.Get<float>();
 	}
 
 	private void FixedUpdate() {
-		//TODO: this needs a fix
-		//rb.linearVelocity = moveDirection;
-		//TODO: create a class for the objects affected by this gravity
-		rb.AddForce(GravitySystem.Instance.GetCurrentGravity());
+		Vector2 currentGravity = GravitySystem.Instance.GetCurrentGravityValue();
+		_rb.AddForce(currentGravity);
+
+		GravityState state = GravitySystem.Instance.GetCurrentGravityState();
+
+		var moveDirection = state switch {
+			GravityState.Down 	=> new Vector2(_moveInput * _velocity, _rb.linearVelocity.y),
+			GravityState.Right 	=> new Vector2(_rb.linearVelocity.x, _moveInput * _velocity),
+			GravityState.Up 	=> new Vector2(-1 * _moveInput * _velocity, _rb.linearVelocity.y),
+			GravityState.Left 	=> new Vector2(_rb.linearVelocity.x, -1 * _moveInput * _velocity),
+			_ => Vector2.zero,
+		};
+
+		_rb.linearVelocity = moveDirection;
 	}
 }

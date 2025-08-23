@@ -13,17 +13,20 @@ public class GameManager : StaticInstance<GameManager> {
 	}
 
 	public void RotateRight() {
-		GravitySystem.Instance.RotateRight();
-		CameraSystem.Instance.RotateLeft();
+		CameraSystem.Instance.RotateLeft(() => {
+			GravitySystem.Instance.RotateRight();
+		});
 	}
 
 	public void RotateLeft() {
-		GravitySystem.Instance.RotateLeft();
-		CameraSystem.Instance.RotateRight();
+		CameraSystem.Instance.RotateRight(() => {
+			GravitySystem.Instance.RotateLeft();
+		});
 	}
 
 	public void Rotate180() {
-		GravitySystem.Instance.Inverse();
-		CameraSystem.Instance.Rotate180();
+		CameraSystem.Instance.Rotate180(() => {
+			GravitySystem.Instance.Inverse();
+		});
 	}
 }
