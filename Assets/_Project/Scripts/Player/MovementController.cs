@@ -6,6 +6,7 @@ public class MovementController : MonoBehaviour {
 
 	[SerializeField] float _velocity = 1;
 
+	float _gravityMultiplier = 1;
 	Rigidbody2D _rb;
 	float _moveInput = new();
 
@@ -17,12 +18,16 @@ public class MovementController : MonoBehaviour {
 
 	}
 
+	public void OnInverse(InputValue value) {
+		_gravityMultiplier *=-1;
+	}
+
 	public void OnMove(InputValue value){
 		_moveInput = value.Get<float>();
 	}
 
 	private void FixedUpdate() {
-		Vector2 currentGravity = GravitySystem.Instance.GetCurrentGravityValue();
+		Vector2 currentGravity = GravitySystem.Instance.GetCurrentGravityValue() * _gravityMultiplier;
 		_rb.AddForce(currentGravity);
 
 		GravityState state = GravitySystem.Instance.GetCurrentGravityState();
