@@ -1,32 +1,51 @@
 using UnityEngine;
 
-public class GameManager : StaticInstance<GameManager> {
+public class GameManager : StaticInstance<GameManager>
+{
 
 	[Header("Prefabs")]
 	[SerializeField] GameObject _playerPrefab;
 
 	public GameObject Player { get; private set; }
+	[SerializeField] bool pauseGame;
 
-	public void LoadLevel(string levelName) {
+	public void LoadLevel(string levelName)
+	{
 		var levelController = LevelSystem.Instance.LoadLevel(levelName);
 		Player = Instantiate(_playerPrefab, levelController.GetPlayerStartPosition());
 	}
 
-	public void RotateRight() {
-		CameraSystem.Instance.RotateLeft(() => {
+	public void RotateRight()
+	{
+		CameraSystem.Instance.RotateLeft(() =>
+		{
 			GravitySystem.Instance.RotateRight();
 		});
 	}
 
-	public void RotateLeft() {
-		CameraSystem.Instance.RotateRight(() => {
+	public void RotateLeft()
+	{
+		CameraSystem.Instance.RotateRight(() =>
+		{
 			GravitySystem.Instance.RotateLeft();
 		});
 	}
 
-	public void Rotate180() {
-		CameraSystem.Instance.Rotate180(() => {
+	public void Rotate180()
+	{
+		CameraSystem.Instance.Rotate180(() =>
+		{
 			GravitySystem.Instance.Inverse();
 		});
 	}
+	public bool GetPauseGame()
+	{
+		return pauseGame;
+	}
+
+	public void SetPauseGame(bool pause)
+	{
+		pauseGame = pause;
+	}
+
 }

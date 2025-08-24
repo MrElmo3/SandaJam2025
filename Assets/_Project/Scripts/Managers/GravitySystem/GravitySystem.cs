@@ -35,15 +35,26 @@ public class GravitySystem : StaticInstance<GravitySystem> {
 		return _actualState;
 	}
 
-	public Vector2 GetCurrentGravityValue(){
-		var currentGravity = _actualState switch {
-			GravityState.Down => Vector2.down,
-			GravityState.Right => Vector2.right,
-			GravityState.Up => Vector2.up,
-			GravityState.Left => Vector2.left,
-			_ => Vector2.zero,
-		};
+	public Vector2 GetCurrentGravityValue()
+	{
+		if (!GameManager.Instance.GetPauseGame())
+		{
+			var currentGravity = _actualState switch
+			{
+				GravityState.Down => Vector2.down,
+				GravityState.Right => Vector2.right,
+				GravityState.Up => Vector2.up,
+				GravityState.Left => Vector2.left,
+				_ => Vector2.zero,
+			};
 
-		return currentGravity * _gravityIntensity;
+			return currentGravity * _gravityIntensity;
+
+		}
+		else
+		{ 
+			return Vector2.zero;
+		}
+		
 	}
 }
