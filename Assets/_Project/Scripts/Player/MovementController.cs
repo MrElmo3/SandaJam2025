@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 public class MovementController : MonoBehaviour {
 
 	[SerializeField] float _velocity = 1;
+	[SerializeField] float _raycastDistance;
+	[SerializeField] LayerMask _groundLayer;
 
 	float _gravityMultiplier = 1;
 	Rigidbody2D _rb;
@@ -35,6 +37,7 @@ public class MovementController : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
+		CheckGround();
 		Vector2 currentGravity = GravitySystem.Instance.GetCurrentGravityValue() * _gravityMultiplier;
 		_rb.AddForce(currentGravity);
 
@@ -51,12 +54,38 @@ public class MovementController : MonoBehaviour {
 		_rb.linearVelocity = moveDirection;
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
-		_isGrounded = true;
-	}
+	public void CheckGround() {
+		// Debug.DrawLine((Vector2)transform.position + new Vector2(0.5f, 0), (Vector2)transform.position + Vector2.down * _raycastDistance, Color.red);
+		// Debug.DrawLine((Vector2)transform.position + new Vector2(-0.5f, 0), (Vector2)transform.position + Vector2.down * _raycastDistance, Color.red);
+		
+		// Debug.DrawLine((Vector2)transform.position + new Vector2(0, 0.5f), (Vector2)transform.position + Vector2.left * _raycastDistance, Color.red);
+		// Debug.DrawLine((Vector2)transform.position + new Vector2(0, -0.5f), (Vector2)transform.position + Vector2.left * _raycastDistance, Color.red);
+		
+		// Debug.DrawLine((Vector2)transform.position + new Vector2(0.5f, 0), (Vector2)transform.position + Vector2.right * _raycastDistance, Color.red);
+		
+		// Debug.DrawLine((Vector2)transform.position + new Vector2(0.5f, 0), (Vector2)transform.position + Vector2.up * _raycastDistance, Color.red);
 
-	void OnCollisionExit2D(Collision2D collision){
-		_isGrounded = false;
+		var downRay1 = Physics2D.Raycast((Vector2)transform.position + new Vector2(0.5f, 0), Vector2.down, _raycastDistance, _groundLayer);
+		var downRay2 = Physics2D.Raycast((Vector2)transform.position + new Vector2(-0.5f, 0), Vector2.down, _raycastDistance, _groundLayer);
+		
+		var leftRay1 = Physics2D.Raycast((Vector2)transform.position + new Vector2(0, 0.5f), Vector2.left, _raycastDistance, _groundLayer);
+		var leftRay2 = Physics2D.Raycast((Vector2)transform.position + new Vector2(0, -0.5f), Vector2.left, _raycastDistance, _groundLayer);
+		
+		var rightRay1 = Physics2D.Raycast((Vector2)transform.position + new Vector2(0, 0.5f), Vector2.right, _raycastDistance, _groundLayer);
+		var rightRay2 = Physics2D.Raycast((Vector2)transform.position + new Vector2(0, -0.5f), Vector2.right, _raycastDistance, _groundLayer);
+		
+		var upRay1 = Physics2D.Raycast((Vector2)transform.position + new Vector2(0.5f, 0), Vector2.up, _raycastDistance, _groundLayer);
+		var upRay2 = Physics2D.Raycast((Vector2)transform.position + new Vector2(-0.5f, 0), Vector2.up, _raycastDistance, _groundLayer);
+
+		_isGrounded = 
+			downRay1.collider ||
+			downRay2.collider ||
+			leftRay1.collider ||
+			leftRay2.collider ||
+			rightRay1.collider ||
+			rightRay2.collider ||
+			upRay1.collider ||
+			upRay2.collider;
 	}
 
 	void OnTriggerStay2D(Collider2D collision) {
