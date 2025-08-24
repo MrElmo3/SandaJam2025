@@ -7,8 +7,8 @@ namespace Scripts.UI
     {
         public static UIManager Instance { get; private set; }
 
-        [SerializeField] private Canvas mainMenuContainer;
-        [SerializeField] private Canvas settingsMenuContainer;
+        [SerializeField] private GameObject mainMenuContainer;
+        [SerializeField] private GameObject settingsMenuContainer;
         [SerializeField] private Button soundButton;
         [SerializeField] private Button musicButton;
 
@@ -58,12 +58,14 @@ namespace Scripts.UI
         public void OnActiveSettings()
         {
             //Juego se pausa
+            mainMenuContainer.gameObject.SetActive(false);
             settingsMenuContainer.gameObject.SetActive(true);
         }
 
         public void OnCloseSettings()
         {
             //Juego se reanuda
+            mainMenuContainer.gameObject.SetActive(true);
             settingsMenuContainer.gameObject.SetActive(false);
         }
 
