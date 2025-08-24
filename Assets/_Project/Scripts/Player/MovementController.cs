@@ -8,14 +8,16 @@ public class MovementController : MonoBehaviour {
 
 	float _gravityMultiplier = 1;
 	Rigidbody2D _rb;
-	float _moveInput = new();
+	Interactor _currentInteractor = null;
+	float _moveInput;
 
 	private void Awake() {
 		_rb = GetComponent<Rigidbody2D>();
 	}
 
 	public void OnInteract(InputValue value) {
-
+		if(_currentInteractor == null) return;
+		_currentInteractor.Interact();
 	}
 
 	public void OnInverse(InputValue value) {
@@ -41,5 +43,13 @@ public class MovementController : MonoBehaviour {
 		};
 
 		_rb.linearVelocity = moveDirection;
+	}
+
+	void OnTriggerStay2D(Collider2D collision) {
+		_currentInteractor = collision.gameObject.GetComponentInParent<Interactor>();
+	}
+
+	void OnTriggerExit2D(Collider2D collision) {
+		_currentInteractor = null;
 	}
 }

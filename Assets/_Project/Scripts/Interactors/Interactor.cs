@@ -9,17 +9,19 @@ public class Interactor : MonoBehaviour, IInteractable {
 	}
 	
 	[SerializeField] RotateDirection _direction = RotateDirection.Right;
-
+	
+	Collider2D _triggerCollider;
 	bool canInteract;
 
-	void OnTriggerEnter2D(Collider2D collision) {
-		Debug.Log("PatataAtomica UwU");
+	private void Awake() {
+		_triggerCollider = GetComponentInChildren<Collider2D>();
+		canInteract = true;
 	}
 
 	public void Interact() {
 		if(!canInteract) return;
 		canInteract = false;
-		//Disable collider
+		_triggerCollider.enabled = false;
 
 		switch(_direction) {
 			case RotateDirection.Right:
@@ -34,5 +36,7 @@ public class Interactor : MonoBehaviour, IInteractable {
 				GameManager.Instance.Rotate180();
 				break;
 		}
+		_triggerCollider.enabled = true;
+		canInteract = true;
 	}
 }
