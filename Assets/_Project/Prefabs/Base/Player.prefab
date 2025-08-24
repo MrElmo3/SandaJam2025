@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocity: 2
-  _raycastDistance: 0
+  _raycastDistance: 0.65
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128

@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6659151004579630476}
   - component: {fileID: 1043143300715954607}
   - component: {fileID: 7270592102306630855}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scene Limits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
