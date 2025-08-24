@@ -9,10 +9,16 @@ public class MovementController : MonoBehaviour {
 	float _gravityMultiplier = 1;
 	Rigidbody2D _rb;
 	Interactor _currentInteractor = null;
+
 	float _moveInput;
+	bool _isGrounded = false;
 
 	private void Awake() {
 		_rb = GetComponent<Rigidbody2D>();
+	}
+
+	void Update() {
+		if(!_isGrounded) _moveInput = 0;
 	}
 
 	public void OnInteract(InputValue value) {
@@ -43,6 +49,14 @@ public class MovementController : MonoBehaviour {
 		};
 
 		_rb.linearVelocity = moveDirection;
+	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		_isGrounded = true;
+	}
+
+	void OnCollisionExit2D(Collision2D collision){
+		_isGrounded = false;
 	}
 
 	void OnTriggerStay2D(Collider2D collision) {
