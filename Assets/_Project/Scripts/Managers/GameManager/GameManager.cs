@@ -9,9 +9,10 @@ public class GameManager : StaticInstance<GameManager>
 	public GameObject Player { get; private set; }
 	[SerializeField] bool pauseGame;
 
-    private void Start()
-    {
+	private void Start()
+	{
 		LoadLevel("MainMenu");
+		AudioManager.Instance.PlayBGM("Fondo");
     }
 
     public void LoadLevel(string levelName)
@@ -24,6 +25,7 @@ public class GameManager : StaticInstance<GameManager>
 	{
 		CameraSystem.Instance.RotateLeft(() =>
 		{
+			AudioManager.Instance.Play("Rotate");
 			GravitySystem.Instance.RotateRight();
 		});
 	}
@@ -32,6 +34,7 @@ public class GameManager : StaticInstance<GameManager>
 	{
 		CameraSystem.Instance.RotateRight(() =>
 		{
+			AudioManager.Instance.Play("Rotate");
 			GravitySystem.Instance.RotateLeft();
 		});
 	}
