@@ -47,6 +47,9 @@ TagManager:
   - name: ForeGround
     uniqueID: 657812003
     locked: 0
+  - name: Kitchen
+    uniqueID: 2146735197
+    locked: 0
   - name: Bathroom
     uniqueID: 346287601
     locked: 0
