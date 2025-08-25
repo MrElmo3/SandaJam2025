@@ -57,14 +57,14 @@ namespace Scripts.UI
 
         public void OnActiveSettings()
         {
-            //Juego se pausa
+            GameManager.Instance.SetPauseGame(true);
             mainMenuContainer.gameObject.SetActive(false);
             settingsMenuContainer.gameObject.SetActive(true);
         }
 
         public void OnCloseSettings()
         {
-            //Juego se reanuda
+            GameManager.Instance.SetPauseGame(false);
             mainMenuContainer.gameObject.SetActive(true);
             settingsMenuContainer.gameObject.SetActive(false);
         }
