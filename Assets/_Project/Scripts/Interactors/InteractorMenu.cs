@@ -2,13 +2,16 @@ using Scripts.UI;
 using UnityEngine;
 
 public class InteractorMenu : MonoBehaviour {
-	
-	private enum MainMenuAction {
-		StartGame,
-		Settings
+
+    private enum MainMenuAction
+    {
+        StartGame,
+        Settings,
+        NextLevel
 	}
 
     [SerializeField] MainMenuAction action;
+    [SerializeField] private string nextLevelName;
 	
 	Collider2D _triggerCollider;
 	bool canInteract;
@@ -34,6 +37,11 @@ public class InteractorMenu : MonoBehaviour {
             case MainMenuAction.Settings:
                 Debug.Log("Settings");
                 UIManager.Instance.OnActiveSettings();
+                break;
+
+            case MainMenuAction.NextLevel:
+                Debug.Log("NextLevel");
+                GameManager.Instance.LoadLevel(nextLevelName);
                 break;
         }
         _triggerCollider.enabled = true;
