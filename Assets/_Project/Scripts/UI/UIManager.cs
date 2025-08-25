@@ -14,6 +14,9 @@ namespace Scripts.UI
 
         [SerializeField] private Button closeSettingsButton;
 
+        private bool _sound = false;
+        private bool _music = false;
+
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -34,11 +37,6 @@ namespace Scripts.UI
         private void OnDisable()
         {
             RemoveListeners();
-        }
-
-        private void Start()
-        {
-
         }
 
         #region Listeners
@@ -71,7 +69,29 @@ namespace Scripts.UI
 
         #region Music & Sound
 
+        public void OnSoundButton()
+        {
+            if (_sound)
+            {
+                AudioManager.Instance.UpdateSoundVolume(0);
+            }
+            else
+            {
+                AudioManager.Instance.UpdateSoundVolume(1);
+            }
+        }
 
+        public void OnMusicButton()
+        {
+            if (_music)
+            {
+                AudioManager.Instance.UpdateMusicVolume(0);
+            }
+            else
+            {
+                AudioManager.Instance.UpdateMusicVolume(1);
+            }
+        }
 
         #endregion
     }
