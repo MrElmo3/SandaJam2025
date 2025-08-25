@@ -145,7 +145,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3735864349848885136}
-  - component: {fileID: 2527323251018703834}
   m_Layer: 0
   m_Name: StartGameInteractor
   m_TagString: Untagged
@@ -169,19 +168,6 @@ Transform:
   - {fileID: 5976186621224404849}
   m_Father: {fileID: 5253888272443308704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2527323251018703834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110758479042306847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d2e356a572bdc4b9a04046642bf7de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action: 0
 --- !u!1 &179065173854256750
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100, y: 250}
+  m_AnchoredPosition: {x: -122, y: 250}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &360661075704354582
@@ -477,7 +463,7 @@ Transform:
   m_GameObject: {fileID: 725910242458255320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.9, z: 0}
+  m_LocalPosition: {x: 0, y: 2.91, z: 0}
   m_LocalScale: {x: 6.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -716,6 +702,7 @@ GameObject:
   - component: {fileID: 5976186621224404849}
   - component: {fileID: 6272216557889786591}
   - component: {fileID: 6946980560386740016}
+  - component: {fileID: 6852057920813119575}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -732,7 +719,7 @@ Transform:
   m_GameObject: {fileID: 1141859904060821684}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9504, z: 0}
+  m_LocalPosition: {x: -0.34, y: 0.9504, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -839,6 +826,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6852057920813119575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141859904060821684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d2e356a572bdc4b9a04046642bf7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: 0
 --- !u!1 &1198964682373858767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,8 +2078,8 @@ Transform:
   m_GameObject: {fileID: 4681347074371075481}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.77, y: -3.1011, z: 0}
-  m_LocalScale: {x: 3.84605, y: 1.33775, z: 1}
+  m_LocalPosition: {x: 3.5, y: -3.1011, z: 0}
+  m_LocalScale: {x: 3.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1930287368610861154}
@@ -2524,7 +2524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -140}
+  m_AnchoredPosition: {x: 0, y: -217}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3436177575898336549
@@ -2886,8 +2886,8 @@ Transform:
   m_GameObject: {fileID: 6383737503951079790}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.7471, y: -3.1011, z: 0}
-  m_LocalScale: {x: 3.84605, y: 1.33775, z: 1}
+  m_LocalPosition: {x: -3.5, y: -3.1011, z: 0}
+  m_LocalScale: {x: 3.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1930287368610861154}
@@ -3089,7 +3089,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8494658821581884018}
-  - component: {fileID: 745156026460961020}
   m_Layer: 0
   m_Name: SettingsInteractor
   m_TagString: Untagged
@@ -3113,19 +3112,6 @@ Transform:
   - {fileID: 3330667190931640028}
   m_Father: {fileID: 5253888272443308704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &745156026460961020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6881465414816026511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d2e356a572bdc4b9a04046642bf7de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action: 1
 --- !u!1 &7102826904930017291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,6 +3259,7 @@ GameObject:
   - component: {fileID: 3330667190931640028}
   - component: {fileID: 9042078012437229809}
   - component: {fileID: 8331723280242670376}
+  - component: {fileID: 1574382554462453780}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -3289,7 +3276,7 @@ Transform:
   m_GameObject: {fileID: 7424406799461603692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9504, z: 0}
+  m_LocalPosition: {x: 0.367, y: 0.9504, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3396,6 +3383,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1574382554462453780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7424406799461603692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d2e356a572bdc4b9a04046642bf7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: 1
 --- !u!1 &8084529894774991744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,7 +3677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 250}
+  m_AnchoredPosition: {x: 110.4, y: 250}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &336202088740271011

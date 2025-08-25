@@ -23,8 +23,9 @@ public class MovementController : MonoBehaviour {
 		if(!_isGrounded) _moveInput = 0;
 	}
 
-	public void OnInteract(InputValue value) {
-		if(_currentInteractor == null) return;
+	public void OnInteract(InputValue value)
+	{
+		if (_currentInteractor == null) return;
 		_currentInteractor.Interact();
 	}
 
@@ -95,11 +96,13 @@ public class MovementController : MonoBehaviour {
 			upRay2.collider;
 	}
 
-	void OnTriggerStay2D(Collider2D collision) {
+	void OnTriggerStay2D(Collider2D collision)
+	{
 		_currentInteractor = collision.gameObject.GetComponentInParent<Interactor>();
 	}
 
-	void OnTriggerExit2D(Collider2D collision) {
+	void OnTriggerExit2D(Collider2D collision)
+	{
 		_currentInteractor = null;
 	}
 }
