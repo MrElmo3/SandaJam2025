@@ -9,7 +9,12 @@ public class GameManager : StaticInstance<GameManager>
 	public GameObject Player { get; private set; }
 	[SerializeField] bool pauseGame;
 
-	public void LoadLevel(string levelName)
+    private void Start()
+    {
+		LoadLevel("MainMenu");
+    }
+
+    public void LoadLevel(string levelName)
 	{
 		var levelController = LevelSystem.Instance.LoadLevel(levelName);
 		Player = Instantiate(_playerPrefab, levelController.GetPlayerStartPosition());
