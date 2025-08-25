@@ -204,6 +204,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_MusicList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_MusicList.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 508fa3b202bca0341a4f42ff93bffcf0, type: 3}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_MusicList.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_MusicList.Array.data[0].name
+      value: Fondo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 919f72d89e56d814d821d747fc101c62, type: 3}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[0].name
+      value: Rotate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e8652b99617cd604eb879cf0733877c2, type: 3}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[1].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[1].name
+      value: Impacto
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_MusicList.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_MusicList.Array.data[0].volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278031160687909114, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
+      propertyPath: m_SoundList.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5878744230065106412, guid: 46bfb42926b07ac48ae49752f8c3e6e8, type: 3}
       propertyPath: _playerPrefab
       value: 
