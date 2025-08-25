@@ -23,6 +23,8 @@ public class Interactor : MonoBehaviour, IInteractable {
 		canInteract = false;
 		_triggerCollider.enabled = false;
 
+		AudioManager.Instance.Play("Lever");
+
 		switch(_direction) {
 			case RotateDirection.Right:
 				GameManager.Instance.RotateRight();

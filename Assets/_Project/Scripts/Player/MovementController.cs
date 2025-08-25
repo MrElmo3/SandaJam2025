@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour {
 
 	float _moveInput;
 	bool _isGrounded = false;
+	bool _isGroundedPrevious = false;
 
 	private void Awake() {
 		_rb = GetComponent<Rigidbody2D>();
@@ -63,15 +64,6 @@ public class MovementController : MonoBehaviour {
 	}
 
 	public void CheckGround() {
-		// Debug.DrawLine((Vector2)transform.position + new Vector2(0.5f, 0), (Vector2)transform.position + Vector2.down * _raycastDistance, Color.red);
-		// Debug.DrawLine((Vector2)transform.position + new Vector2(-0.5f, 0), (Vector2)transform.position + Vector2.down * _raycastDistance, Color.red);
-		
-		// Debug.DrawLine((Vector2)transform.position + new Vector2(0, 0.5f), (Vector2)transform.position + Vector2.left * _raycastDistance, Color.red);
-		// Debug.DrawLine((Vector2)transform.position + new Vector2(0, -0.5f), (Vector2)transform.position + Vector2.left * _raycastDistance, Color.red);
-		
-		// Debug.DrawLine((Vector2)transform.position + new Vector2(0.5f, 0), (Vector2)transform.position + Vector2.right * _raycastDistance, Color.red);
-		
-		// Debug.DrawLine((Vector2)transform.position + new Vector2(0.5f, 0), (Vector2)transform.position + Vector2.up * _raycastDistance, Color.red);
 
 		var downRay1 = Physics2D.Raycast((Vector2)transform.position + new Vector2(0.5f, 0), Vector2.down, _raycastDistance, _groundLayer);
 		var downRay2 = Physics2D.Raycast((Vector2)transform.position + new Vector2(-0.5f, 0), Vector2.down, _raycastDistance, _groundLayer);
@@ -94,6 +86,11 @@ public class MovementController : MonoBehaviour {
 			rightRay2.collider ||
 			upRay1.collider ||
 			upRay2.collider;
+
+		if(_isGrounded && !_isGroundedPrevious){
+			AudioManager.Instance.Play("PlayerImpact1");
+		}
+		_isGroundedPrevious = _isGrounded;
 	}
 
 	void OnTriggerStay2D(Collider2D collision)
