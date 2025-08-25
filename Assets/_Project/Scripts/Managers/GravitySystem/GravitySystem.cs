@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum GravityState {
@@ -57,4 +58,9 @@ public class GravitySystem : StaticInstance<GravitySystem> {
 		}
 		
 	}
+
+    public void ResetGravity()
+    {
+		_actualState = GravityState.Down;
+    }
 }

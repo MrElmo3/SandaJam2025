@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -55,4 +56,13 @@ public class CameraSystem : StaticInstance<CameraSystem> {
 		};
 	}
 
+	public void ResetCamera(UnityAction OnComplete = null)
+	{
+		mainCamera.DORotate(
+		new Vector3(0, 0, 0),
+		0.5f,
+		RotateMode.Fast)
+		.onComplete = () => { OnComplete?.Invoke(); };
+		
+    }
 }

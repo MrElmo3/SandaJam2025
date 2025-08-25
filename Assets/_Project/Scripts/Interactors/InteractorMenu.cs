@@ -42,6 +42,8 @@ public class InteractorMenu : MonoBehaviour {
             case MainMenuAction.NextLevel:
                 Debug.Log("NextLevel");
                 GameManager.Instance.LoadLevel(nextLevelName);
+                GravitySystem.Instance.ResetGravity();
+                CameraSystem.Instance.ResetCamera();
                 break;
         }
         _triggerCollider.enabled = true;
