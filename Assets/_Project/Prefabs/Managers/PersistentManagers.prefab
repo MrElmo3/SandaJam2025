@@ -119,6 +119,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1496566219416114586}
     m_Modifications:
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_MusicList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_MusicList.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 508fa3b202bca0341a4f42ff93bffcf0, type: 3}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_MusicList.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_MusicList.Array.data[0].name
+      value: Fondo
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 919f72d89e56d814d821d747fc101c62, type: 3}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.data[0].name
+      value: Rotate
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e8652b99617cd604eb879cf0733877c2, type: 3}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.data[1].name
+      value: Impacto
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_MusicList.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_MusicList.Array.data[0].volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -887637528426464235, guid: 16563540733885c46804c46c2e947a10, type: 3}
+      propertyPath: m_SoundList.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1887687604968566474, guid: 16563540733885c46804c46c2e947a10, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -309,6 +369,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1496566219416114586}
     m_Modifications:
+    - target: {fileID: 2778905757428789562, guid: 09f12079e58c0404ea5c8f7559565bae, type: 3}
+      propertyPath: _playerPrefab
+      value: 
+      objectReference: {fileID: 3758655261272864158, guid: f76f90a06cc89104ab4ea857c6b070b2, type: 3}
     - target: {fileID: 4513524257272645530, guid: 09f12079e58c0404ea5c8f7559565bae, type: 3}
       propertyPath: m_Name
       value: GameManager

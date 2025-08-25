@@ -23,11 +23,8 @@ public class AudioManager : StaticInstance<AudioManager> {
 	protected override void Awake() {
 		base.Awake();
 		SetupClips();
-		SceneManager.sceneLoaded += OnSceneLoaded;
-	}
-
-	private void Start() {
 		m_backgroundAudioSource = GetComponent<AudioSource>();
+		SceneManager.sceneLoaded += OnSceneLoaded;
 	}
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
